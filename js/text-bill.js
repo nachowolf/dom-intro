@@ -38,8 +38,8 @@ document.getElementById("text-button").disabled = false;
             totalOneElement.classList.add("warning");
         }
         else {
-          totalSettings.classList.remove("danger");
-          totalSettings.classList.remove("warning");
+          totalOneElement.classList.remove("danger");
+          totalOneElement.classList.remove("warning");
         }
 }
 

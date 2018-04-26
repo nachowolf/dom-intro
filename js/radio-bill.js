@@ -44,8 +44,8 @@ var totalTwoElement = document.querySelector(".totalTwo");
                 totalTwoElement.classList.add("warning");
             }
             else {
-              totalSettings.classList.remove("danger");
-              totalSettings.classList.remove("warning");
+              totalTwoElement.classList.remove("danger");
+              totalTwoElement.classList.remove("warning");
             }
     }
 

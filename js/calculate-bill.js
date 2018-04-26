@@ -34,8 +34,8 @@ function calculateBtnClicked(){
                 billTotalElement.classList.add("warning");
             }
             else {
-              totalSettings.classList.remove("danger");
-              totalSettings.classList.remove("warning");
+              billTotalElement.classList.remove("danger");
+              billTotalElement.classList.remove("warning");
 }
     }
 
