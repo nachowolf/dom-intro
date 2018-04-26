@@ -77,8 +77,9 @@ function radioBillTotalSettings(){
           }
 
           else if (settingTotal >= warningSetting){
+               totalSettings.classList.remove("danger");
              totalSettings.classList.add("warning");
-             totalSettings.classList.remove("danger");
+            
           }
 
 else {
