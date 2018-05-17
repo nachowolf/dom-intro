@@ -4,27 +4,23 @@ var callTotalOneElement = document.querySelector(".callTotalOne")
 var smsTotalOneElement = document.querySelector(".smsTotalOne")
 var totalOneElement = document.querySelector(".totalOne")
 
-var textCallsTotal = 0;
-var textSmsTotal = 0;
 
-
-function textBillTotal(){
+var textBillTotal = function(){
+var textBill = TextBillCalculator()
 document.getElementById("text-button").disabled = false;
     // get the value entered in the billType textfield
-    var billTypeEntered = billTypeTextElement.value.trim();
-    // update the correct total
-    if (billTypeEntered === "call"){
-        textCallsTotal += 2.75
-    }
-    else if (billTypeEntered === "sms"){
-        textSmsTotal += 0.75;
-    }
+var billTypeEntered = billTypeTextElement.value
+textBill.add(billTypeEntered)
+
+var textCallTotal = textBill.callTotal()
+var textSmsTotal = textBill.smsTotal()
+var textTotalCost = textBill.textTotal()
+
 
     //update the totals that is displayed on the screen.
-    callTotalOneElement.innerHTML = textCallsTotal.toFixed(2);
-    smsTotalOneElement.innerHTML = textSmsTotal.toFixed(2);
-    var textTotalCost = textCallsTotal + textSmsTotal;
-    totalOneElement.innerHTML = textTotalCost.toFixed(2);
+    callTotalOneElement.innerHTML = textCallTotal
+    smsTotalOneElement.innerHTML = textSmsTotal
+    totalOneElement.innerHTML = textTotalCost
 
     if (textTotalCost >= 50){
             // adding the danger class will make the text red

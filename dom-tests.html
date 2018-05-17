@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.min.js"></script>
+</head>
+
+<body>
+    <div id="mocha"></div>
+    <script>
+        mocha.setup('bdd');
+        var assert = chai.assert;
+    </script>
+
+    <!--calculate bill test-->
+    <script src="js-logic/calculate-bill-factory.js"></script>
+    <script src="dom-tests/calculateBill.test.js"></script>
+
+    <!--fruit eater test-->
+<script src="js-logic/fruit-eater.js"></script>
+<script src="dom-tests/fruit-eater.test.js"></script>
+
+<!--text bill test-->
+<script src="js-logic/text-bill-factory.js"></script>
+<script src="dom-tests/text-bill.test.js"></script>
+
+<!--radio bill test-->
+<script src="js-logic/radio-bill-factory.js"></script>
+<script src="dom-tests/radio-bill.test.js"></script>
+
+
+    <!--settings bill test -->
+    <script src="js-logic/settings-bill-factory.js"></script>
+    <script src="dom-tests/settingsBill.test.js"></script>
+
+
+
+
+    <script>
+        mocha.checkLeaks();
+        mocha.run();
+    </script>
+</body>
+
+</html>

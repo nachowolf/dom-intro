@@ -5,8 +5,6 @@ var totalTwoElement = document.querySelector(".totalTwo");
 
 
 
-    var radioCallsTotal = 0;
-    var radioSmsTotal = 0;
 
 
     function radioBillTotal(){
@@ -16,21 +14,20 @@ var totalTwoElement = document.querySelector(".totalTwo");
       if (checkedRadioBtn){
           var billItemType = checkedRadioBtn.value
         }
+         var radioFun = RadioFactory();
+         radioFun.radioAdd(billItemType)
 
-      if (billItemType === "call"){
-          radioCallsTotal += 2.75;
-      }
-      else if (billItemType === "sms") {
-          radioSmsTotal += 0.75;
-      }
+         var radioCallsTotal = radioFun.callTotal()
+         var radioSmsTotal = radioFun.smsTotal()
+         var radioTotalCost = radioFun.total()
+
         // get the value entered in the billType textfie
 
 
         //update the totals that is displayed on the screen.
-        callTotalTwoElement.innerHTML = radioCallsTotal.toFixed(2);
-        smsTotalTwoElement.innerHTML = radioSmsTotal.toFixed(2);
-        var radioTotalCost = radioCallsTotal + radioSmsTotal;
-        totalTwoElement.innerHTML = radioTotalCost.toFixed(2);
+        callTotalTwoElement.innerHTML = radioCallsTotal
+        smsTotalTwoElement.innerHTML = radioSmsTotal
+        totalTwoElement.innerHTML = radioTotalCost
 
         if (radioTotalCost >= 50){
                 // adding the danger class will make the text red
@@ -50,19 +47,3 @@ var totalTwoElement = document.querySelector(".totalTwo");
     }
 
     radioBillAddBtnElement.addEventListener('click', radioBillTotal);
-
-
-    // billItemType will be 'call' or 'sms'
-
-// get a reference to the sms or call radio buttons
-
-//get a reference to the add button
-
-//create a variable that will keep track of the total bill
-
-//add an event listener for when the add button is pressed
-
-//in the event listener get the value from the billItemTypeRadio radio buttons
-// * add the appropriate value to the running total
-// * add nothing for invalid values that is not 'call' or 'sms'.
-// * display the latest total on the screen
