@@ -20,6 +20,7 @@ var billTotal = calculateBillFunc.Total();
             }
 
             else if (billTotal >= 20){
+              billTotalElement.classList.remove("danger");
                 billTotalElement.classList.add("warning");
             }
             else {
