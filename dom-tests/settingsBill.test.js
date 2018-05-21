@@ -1,12 +1,28 @@
 describe("Tests the setting bill factory", function(){
-  it("should return 0 for call, sms and total", function(){
+
+/*  it("should return 0 for call, sms and total", function(){
     var settings = SettingsBillFactory()
-    assert.equal(settings.total(), 0)
     assert.equal(settings.callTotal(), 0)
     assert.equal(settings.smsTotal(), 0)
+    assert.equal(settings.total(), 0)
+
+  })*/
+
+  it("should update sms,call, warning and critical setiings", function(){
+    var settings = SettingsBillFactory()
+    settings.call(5)
+    settings.sms(2.50)
+    settings.warning(30)
+    settings.critical(40)
+    settings.settingsAdd("sms")
+    settings.settingsAdd("call")
+    assert.equal(settings.callTotal(), 5.00)
+    assert.equal(settings.smsTotal(), 2.50)
+    assert.equal(settings.total(), 7.50)
   })
 
-  it("should return 15.30 for 6 calls and total and return 0 for sms", function(){
+
+  it("should return 35.00 for calls, 37.50 for total and return 2.50 for sms", function(){
 var settings = SettingsBillFactory()
 settings.settingsAdd("call")
 settings.settingsAdd("call")
@@ -14,12 +30,13 @@ settings.settingsAdd("call")
 settings.settingsAdd("call")
 settings.settingsAdd("call")
 settings.settingsAdd("call")
-    assert.equal(settings.total(), 15.30)
-    assert.equal(settings.callTotal(), 15.30)
-    assert.equal(settings.smsTotal(), 0)
+assert.equal(settings.callTotal(), 35.00)
+assert.equal(settings.smsTotal(), 2.50)
+    assert.equal(settings.total(), 37.50)
+
   })
 
-  it("should return 15.30 for 6 calls, 6.50 for 10 sms and 21.80 for total", function(){
+  it("should return 35.00 for 6 calls, 17.50 for 6 sms and 52.50 for total", function(){
 var settings = SettingsBillFactory()
 settings.settingsAdd("sms")
 settings.settingsAdd("sms")
@@ -27,12 +44,10 @@ settings.settingsAdd("sms")
 settings.settingsAdd("sms")
 settings.settingsAdd("sms")
 settings.settingsAdd("sms")
-settings.settingsAdd("sms")
-settings.settingsAdd("sms")
-settings.settingsAdd("sms")
-settings.settingsAdd("sms")
-    assert.equal(settings.total(), 21.80)
-    assert.equal(settings.callTotal(), 15.30)
-    assert.equal(settings.smsTotal(), 6.50)
-  })
+assert.equal(settings.callTotal(), 35.00)
+assert.equal(settings.smsTotal(), 17.50)
+    assert.equal(settings.total(), 52.50)
+})
+
+
 })

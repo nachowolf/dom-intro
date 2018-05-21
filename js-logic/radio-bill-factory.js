@@ -31,7 +31,7 @@ return{
   radioAdd : radioBill,
   callTotal : radioCall,
   smsTotal : radioSms,
-  total : radioTotal 
+  total : radioTotal
 }
 
 }

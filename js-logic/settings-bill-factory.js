@@ -1,3 +1,4 @@
+
 var callSetting = 2.55;
 var smsSetting = 0.65;
 var warningSetting = 30.00;
@@ -7,6 +8,8 @@ var callSettingTotal = 0;
 var smsSettingTotal = 0;
 
 var SettingsBillFactory = function(){
+
+
 
   var settingCall = function(input){
      if(parseFloat(input) < 0 || parseFloat(input) > 0){

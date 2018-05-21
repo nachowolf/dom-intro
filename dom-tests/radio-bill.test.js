@@ -1,12 +1,12 @@
 describe("Tests the radio bill function", function(){
 
-  it("Should return 0 for call, sms and total", function(){
+  /*it("Should return 0 for call, sms and total", function(){
     var radioFun = RadioFactory()
     assert.equal(radioFun.total(), 0)
 assert.equal(radioFun.callTotal(), 0)
 assert.equal(radioFun.smsTotal(), 0)
 
-  })
+})*/
 
   it("should return 0 for sms and 13.75 for total and 5 calls", function(){
     var radioFun = RadioFactory()
