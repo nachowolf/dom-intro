@@ -1,7 +1,8 @@
-var textCallsTotal = 0;
-var textSmsTotal = 0;
+
 var TextBillCalculator = function(){
 
+  var textCallsTotal = 0;
+  var textSmsTotal = 0;
 
 var textBillTotal = function(input){
 var text = input.trim();

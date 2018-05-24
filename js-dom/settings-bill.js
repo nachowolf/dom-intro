@@ -15,15 +15,19 @@ var updateSettings = document.querySelector(".updateSettings");
 var settings = SettingsBillFactory();
 
 
+
+var warningSetting;
+var criticalSetting;
+
 function settingsBillTotal(){
 
-if(criticalLevelSetting.value!= settings.critical()){
+if(criticalLevelSetting.value != settings.critical()){
 document.getElementById("setting-button").disabled = false;
 }
 settings.call(callCostSetting.value);
 settings.sms(smsCostSetting.value);
-var warningSetting = settings.warning(warningLevelSetting.value);
-var criticalSetting = settings.critical(criticalLevelSetting.value);
+warningSetting = settings.warning(warningLevelSetting.value);
+criticalSetting = settings.critical(criticalLevelSetting.value);
 
 
 }
@@ -52,7 +56,7 @@ settings.settingsAdd(billItemTypeSettings);
         document.getElementById("setting-button").disabled = true;
               // adding the danger class will make the text red
               totalSettings.classList.add("danger");
-         setTimeout(function(){alert("Bill with settings critical level reached")}, 100);
+         setTimeout(function(){alert("Bill with settings critical level reached");}, 100);
 
 
           }

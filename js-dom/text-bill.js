@@ -4,9 +4,10 @@ var callTotalOneElement = document.querySelector(".callTotalOne")
 var smsTotalOneElement = document.querySelector(".smsTotalOne")
 var totalOneElement = document.querySelector(".totalOne")
 
+var textBill = TextBillCalculator()
 
 var textBillTotal = function(){
-var textBill = TextBillCalculator()
+
 document.getElementById("text-button").disabled = false;
     // get the value entered in the billType textfield
 var billTypeEntered = billTypeTextElement.value

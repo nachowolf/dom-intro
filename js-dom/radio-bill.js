@@ -4,7 +4,7 @@ var smsTotalTwoElement = document.querySelector(".smsTotalTwo");
 var totalTwoElement = document.querySelector(".totalTwo");
 
 
-
+ var radioFun = RadioFactory();
 
 
     function radioBillTotal(){
@@ -14,7 +14,7 @@ var totalTwoElement = document.querySelector(".totalTwo");
       if (checkedRadioBtn){
           var billItemType = checkedRadioBtn.value
         }
-         var radioFun = RadioFactory();
+
          radioFun.radioAdd(billItemType)
 
          var radioCallsTotal = radioFun.callTotal()

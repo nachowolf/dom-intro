@@ -1,8 +1,10 @@
 
-var radioCallsTotal = 0;
-var radioSmsTotal = 0;
+
 
 var RadioFactory = function(){
+
+  var radioCallsTotal = 0;
+  var radioSmsTotal = 0;
 
   var radioBill = function (input){
 
